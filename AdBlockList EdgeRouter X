@@ -1,0 +1,1 @@
+curl -s https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts | grep -v "#" | sed '/^$/d' | sed 's/\ /\\ /g' | grep -v '^\\' | grep -v '\\$' | awk '{printf "address=/%s/0.0.0.0\n",$2;}' | grep -v '^\\' | grep -v '\\$' | sort >> host.list
