@@ -1,0 +1,16 @@
+[credential]
+        helper = wincred
+[push]
+        default = matching
+[core]
+        autocrlf = true
+        editor = nano
+[alias]
+        st = status -s -b
+        unstage = reset HEAD --
+        revert = checkout HEAD --
+        pullall = !git pull && git submodule foreach git pull origin master
+        initall = !git submodule init && git submodule update && git submodule foreach git checkout master && git submodule foreach git pull origin master
+        pu = !git pull && git checkout staging && git merge master && git push && git checkout master
+        npmpatch = !git pull && git push && npm version patch && git push && npm publish
+        head = !git reset --hard HEAD && git pull
